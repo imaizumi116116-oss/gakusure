@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "postinstall": "prisma generate",
     "predev": "prisma migrate deploy && prisma generate",
     "prebuild": "prisma generate",
     "pretest": "prisma generate",
