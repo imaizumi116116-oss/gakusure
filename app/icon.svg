@@ -1,0 +1,66 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="こくとちスレ アイコン">
+  <defs>
+    <linearGradient id="bg" x1="106" y1="70" x2="420" y2="468" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FDF3E8" />
+      <stop offset="0.55" stop-color="#F8E0C8" />
+      <stop offset="1" stop-color="#F2C7A3" />
+    </linearGradient>
+    <linearGradient id="bgGlow" x1="140" y1="76" x2="372" y2="436" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white" stop-opacity="0.55" />
+      <stop offset="1" stop-color="white" stop-opacity="0" />
+    </linearGradient>
+    <filter id="softShadow" x="0" y="0" width="512" height="512" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#3A2A23" flood-opacity="0.18" />
+    </filter>
+  </defs>
+
+  <g filter="url(#softShadow)">
+    <rect x="44" y="44" width="424" height="424" rx="120" fill="url(#bg)" />
+    <rect x="44" y="44" width="424" height="424" rx="120" fill="url(#bgGlow)" />
+  </g>
+
+  <g stroke="#D27C54" stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
+    <!-- back bubble -->
+    <path
+      d="M142 200
+         C142 168 168 142 200 142
+         H308
+         C340 142 366 168 366 200
+         V272
+         C366 304 340 330 308 330
+         H226
+         L186 366
+         L196 330
+         H200
+         C168 330 142 304 142 272
+         V200Z"
+      fill="none"
+      opacity="0.95"
+    />
+
+    <!-- front bubble -->
+    <path
+      d="M198 244
+         C198 212 224 186 256 186
+         H330
+         C362 186 388 212 388 244
+         V314
+         C388 346 362 372 330 372
+         H288
+         L256 410
+         L264 372
+         H256
+         C224 372 198 346 198 314
+         V244Z"
+      fill="none"
+    />
+  </g>
+
+  <!-- pin -->
+  <g fill="#D27C54">
+    <ellipse cx="388" cy="174" rx="42" ry="20" />
+    <rect x="368" y="174" width="40" height="48" rx="20" />
+    <ellipse cx="388" cy="222" rx="48" ry="22" />
+  </g>
+  <path d="M388 244 L360 286" stroke="#D27C54" stroke-width="16" stroke-linecap="round" />
+</svg>

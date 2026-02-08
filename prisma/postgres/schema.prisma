@@ -1,0 +1,97 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique
+  name        String
+  description String
+  createdAt   DateTime @default(now())
+  threads     Thread[]
+
+  @@index([slug])
+}
+
+model Thread {
+  id             Int      @id @default(autoincrement())
+  categoryId     Int
+  title          String
+  body           String
+  authorName     String
+  authorClientId String?
+  isStaff        Boolean  @default(false)
+  pinnedAt       DateTime?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  lastPostedAt   DateTime @default(now())
+  deletedAt      DateTime?
+
+  category Category @relation(fields: [categoryId], references: [id])
+  posts    Post[]
+
+  @@index([categoryId])
+  @@index([pinnedAt])
+  @@index([lastPostedAt])
+}
+
+model Post {
+  id             Int      @id @default(autoincrement())
+  threadId       Int
+  body           String
+  authorName     String
+  authorClientId String?
+  isStaff        Boolean  @default(false)
+  pinnedAt       DateTime?
+  createdAt      DateTime @default(now())
+  deletedAt      DateTime?
+
+  thread Thread @relation(fields: [threadId], references: [id])
+
+  @@index([threadId])
+  @@index([createdAt])
+  @@index([pinnedAt])
+}
+
+model Reaction {
+  id             Int      @id @default(autoincrement())
+  targetType     String
+  targetId       Int
+  type           String
+  authorClientId String
+  createdAt      DateTime @default(now())
+
+  @@index([targetType, targetId])
+  @@index([authorClientId])
+  @@unique([targetType, targetId, type, authorClientId])
+}
+
+model Report {
+  id         Int      @id @default(autoincrement())
+  targetType String
+  targetId   Int
+  reason     String
+  note       String?
+  createdAt  DateTime @default(now())
+
+  @@index([targetType, targetId])
+}
+
+model RateLimitBucket {
+  key         String
+  windowStart DateTime
+  count       Int      @default(0)
+  expiresAt   DateTime
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@id([key, windowStart])
+  @@index([expiresAt])
+  @@index([key])
+}
+

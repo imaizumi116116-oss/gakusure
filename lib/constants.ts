@@ -1,0 +1,9 @@
+export const PAGE_SIZE = 10;
+export const RATE_LIMIT_WINDOW_MS = 30_000;
+export const MAX_TITLE_LENGTH = 80;
+export const MAX_BODY_LENGTH = 2000;
+export const MAX_NAME_LENGTH = 20;
+export const MAX_REPORT_NOTE_LENGTH = 200;
+export const MAX_SEARCH_QUERY_LENGTH = 120;
+export const CSRF_HEADER_NAME = 'x-kokutochi-csrf';
+export const CSRF_HEADER_VALUE = '1';
