@@ -2,7 +2,7 @@ export const copy = {
   site: {
     name: 'まなスレ   ',
     tagline: '学生向けの掲示板',
-    logoChar: 'こ',
+    logoChar: '',
     description: '親しみやすく、安心して使える掲示板サイト。',
     footerNote: 'やさしい空気を守るための小さなルールを大切にしています。',
     copyright: '© 2026 まなスレ ',
@@ -14,7 +14,7 @@ export const copy = {
   },
   home: {
     moodLabel: '今日の雰囲気',
-    moods: ['まったり', '相談日和', 'ゆるやか', 'ほっと一息'],
+    moods: ['まったり', 'のんびり', 'ゆるやか', '和やか', 'ほっこり '],
     headlineSuffix: '',
     subcopy: '利用ルールを守り、相手への配慮を前提に会話を進めてください。',
     emptyTitle: 'まだスレッドがありません',
